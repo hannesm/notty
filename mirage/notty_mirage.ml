@@ -68,6 +68,8 @@ module Term (L : TERMINAL_LINK) = struct
 
   let set_size t dim = Tmachine.set_size t.trm dim
 
+  let size t = Tmachine.size t.trm
+
   let writev t msgs =
     msgs |> List.iter (function
       | `Cursor curs -> Tmachine.cursor t.trm curs

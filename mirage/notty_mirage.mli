@@ -33,6 +33,8 @@ module Term (F : TERMINAL_LINK) : sig
      and type output = [ `Image of image | `Cursor of (int * int) option ]
 
   val create : ?mouse:bool -> ?cap:Notty.Cap.t -> F.flow -> [ `Ok of flow | `Error of error | `Eof ] Lwt.t
+
+  val size : flow -> int * int
 end
 
 module Terminal_link_of_console (C : V1_LWT.CONSOLE) :
